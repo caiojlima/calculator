@@ -8,9 +8,23 @@ const sete = document.getElementById('sete');
 const oito = document.getElementById('oito');
 const nove = document.getElementById('nove');
 const mais = document.getElementById('mais');
+const zero = document.getElementById('zero');
 const menos = document.getElementById('menos');
 const divisão = document.getElementById('divisao');
 const multi = document.getElementById('multi');
 const ponto = document.getElementById('ponto');
-const zero = document.getElementById('zero');
 const igual = document.getElementById('igual');
+const visor = document.getElementById('visor');
+const apagar = document.getElementById('apagar');
+
+const numbers = [zero, um, dois, tres, quatro, cinco, seis, sete, oito, nove]
+
+numbers.forEach((number, index) => {
+  number.addEventListener('click', () => {
+    if(visor.value === '0') {
+      visor.value = index;
+    } else {
+      visor.value += index;
+    }
+  });
+});

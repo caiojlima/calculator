@@ -34,14 +34,28 @@
 .input-container {
   width: 85%;
   height: 12%;
+  display: flex;
+  justify-content: space-between;
 }
 
 #visor {
-  width: 100%;
+  width: 88%;
   height: 100%;
   border-radius: 5px;
   text-align: right;
   font-size: 150%;
+}
+
+#visor::-webkit-outer-spin-button,
+#visor::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-container button {
+  width: 10%;
+  height: 100%;
+  border-radius: 5px;
 }
 
 .buttons-container {
