@@ -17,8 +17,8 @@ const igual = document.getElementById('igual');
 const visor = document.getElementById('visor');
 const apagar = document.getElementById('apagar');
 const numeros = [zero, um, dois, tres, quatro, cinco, seis, sete, oito, nove];
-const operadores = [mais, menos, divisao, multi];
-const simbolos = ['+', '-', '/', '*'];
+const operadores = [mais, menos, divisao, multi, ponto];
+const simbolos = ['+', '-', '/', '*', '.'];
 
 numeros.forEach((number, index) => {
   number.addEventListener('click', () => {
@@ -36,4 +36,17 @@ operadores.forEach((operador, index) => {
       visor.value += simbolos[index];
     }
   });
+});
+
+apagar.addEventListener('click', () => {
+  if(visor.value.length === 1) {
+    visor.value = '0';
+  } else{
+    visor.value = visor.value.slice(0, -1);
+  }
+});
+
+igual.addEventListener('click', () => {
+  visor.value = eval(visor.value);
+  
 });
