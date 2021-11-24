@@ -41,12 +41,17 @@ operadores.forEach((operador, index) => {
 apagar.addEventListener('click', () => {
   if(visor.value.length === 1) {
     visor.value = '0';
-  } else{
+  } else {
     visor.value = visor.value.slice(0, -1);
   }
 });
 
 igual.addEventListener('click', () => {
-  visor.value = eval(visor.value);
-  
+  if(/[a-z]/ig.test(visor.value)) {
+    visor.value = 'Error!';
+  } else if(/\.\./g.test(visor.value)) {
+    visor.value = 'Error!';
+  } else {
+    visor.value = eval(visor.value);
+  }
 });
