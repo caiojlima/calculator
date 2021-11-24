@@ -10,21 +10,30 @@ const nove = document.getElementById('nove');
 const mais = document.getElementById('mais');
 const zero = document.getElementById('zero');
 const menos = document.getElementById('menos');
-const divisão = document.getElementById('divisao');
+const divisao = document.getElementById('divisao');
 const multi = document.getElementById('multi');
 const ponto = document.getElementById('ponto');
 const igual = document.getElementById('igual');
 const visor = document.getElementById('visor');
 const apagar = document.getElementById('apagar');
+const numeros = [zero, um, dois, tres, quatro, cinco, seis, sete, oito, nove];
+const operadores = [mais, menos, divisao, multi];
+const simbolos = ['+', '-', '/', '*'];
 
-const numbers = [zero, um, dois, tres, quatro, cinco, seis, sete, oito, nove]
-
-numbers.forEach((number, index) => {
+numeros.forEach((number, index) => {
   number.addEventListener('click', () => {
     if(visor.value === '0') {
       visor.value = index;
     } else {
       visor.value += index;
+    }
+  });
+});
+
+operadores.forEach((operador, index) => {
+  operador.addEventListener('click', () => {
+    if(visor.value !== '0') {
+      visor.value += simbolos[index];
     }
   });
 });
