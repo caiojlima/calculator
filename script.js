@@ -51,6 +51,8 @@ igual.addEventListener('click', () => {
     visor.value = 'Error!';
   } else if(/\.\./g.test(visor.value)) {
     visor.value = 'Error!';
+  } else if(!visor.value) {
+    visor.value = 'Error!';
   } else {
     visor.value = eval(visor.value);
   }
